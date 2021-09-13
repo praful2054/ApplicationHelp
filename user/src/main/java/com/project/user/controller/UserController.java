@@ -70,11 +70,15 @@ public class UserController {
 				String.class);
 
 		if (postForEntity.getStatusCodeValue() == 200) {
+			
+			System.out.println("1st Api Executed SuccessFully");
 
 			ResponseEntity<UserDataResponse[]> getForEntity = restTemplate.getForEntity(baseUrl,
 					UserDataResponse[].class);
 			
 			if (getForEntity.getStatusCodeValue() == 200) {
+				
+				System.out.println("2nd Api Executed SuccessFully");
 
 			UserDataResponse[] listOfData = getForEntity.getBody();
 
